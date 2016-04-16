@@ -1,0 +1,11 @@
+CC=g++
+CFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -std=c++11 -L"C:/Program Files (x86)/SFML/lib" -I"C:\\Program Files (x86)\\SFML\\include"
+
+main: main.o
+	$(CC) main.o -g -o main.exe $(CFLAGS)
+
+main.o: main.cpp Entity.hpp Animation.hpp SpriteSheet.hpp TileMap.hpp
+	$(CC) -g -c main.cpp $(CFLAGS)
+
+clean:
+	del *.o
